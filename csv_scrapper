@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+import csv
+
+host_total_count = 0
+running_count = 0
+inactive_count = 0
+
+
+unique_count = {""}
+count_list = []
+
+pud_running = 0
+pud_inactive = 0
+num = 0
+
+with open('/Users/terry.dennison/Downloads/graph_out.csv') as csv_reader:
+    sheet_doc = csv.reader(csv_reader)
+
+    for i in sheet_doc:
+        if 'host' in i[1]:
+            host_total_count += 1
+            count_list.append(i[1])
+            #unique_count= {count_list}
+    # unique_count.add(i[1])
+    for i in count_list:
+        unique_count.add(i)
+
+
+    print({'Hosts': unique_count}) 
+    print("")    
+    print({'Hosts Count': len(unique_count)})
+#print({'Host Total':host_total_count, 'Unique Hosts': unique_count, 'Unique Count': len(unique_count)})
